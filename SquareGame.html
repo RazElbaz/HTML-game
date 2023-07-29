@@ -30,6 +30,18 @@
 
         ctx.strokeRect(base_x, base_y, 50, 50)
         
+        function handleInput(event){
+            const key = event.key
+            if( key == 'w'){
+                console.log(" w pressed")
+            } else if ( key == 'd'){
+                console.log(" d pressed")
+            } else if ( key == 's'){
+                console.log(" s pressed")
+            }
+        }
+
+        document.addEventListener('keypress', handleInput)
     </script>
 
     <style>
