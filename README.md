@@ -1,32 +1,47 @@
 
-# Square Seeker - Readme
+Sure, here's the revised README without the "How to Customize" section:
 
-Welcome to Square Seeker, a simple and fun game where you control a red square seeking out a big square (the target) and earning points as you reach it!
+# Square Seeker - README
+
+Square Seeker is a simple web-based game where the objective is to move a red square over a randomly positioned square on the canvas to increase your score. The game also includes a timer that starts at 60 seconds and decreases as you score more points, making the game more challenging as you progress.
 
 ## How to Play
 
-1. **Start**: Click the "Start" button to begin the game. The red square will start moving.
+1. **Accessing the Game**
+   - You can play the game by opening the provided `index.html` file in a web browser.
+   - Alternatively, you can host the game on a web server and access it through the server's URL.
 
-2. **Objective**: Move the red square using the "W" (up), "A" (left), "S" (down), and "D" (right) keys to overlap it with the big square.
+2. **Starting the Game**
+   - Click the "Start" button to begin the game.
+   - Once the game starts, you will control a red square that you can move using the following keyboard keys:
+     - 'W' key: Move the square up
+     - 'A' key: Move the square left
+     - 'S' key: Move the square down
+     - 'D' key: Move the square right
 
-3. **Scoring**: Each time you successfully overlap the red square with the big square, you earn 5 points.
+3. **Objective**
+   - Move the red square over the randomly positioned square (the base) on the canvas.
+   - Each time the red square overlaps the base, your score will increase by 5 points.
 
-4. **Challenge**: The position of the big square will change randomly after each successful overlap, so keep an eye on its new location.
+4. **Timer**
+   - The game starts with a timer set to 60 seconds.
+   - As your score increases, the timer duration will decrease, making the game more challenging.
+   - The timer is displayed at the bottom of the game interface.
 
-5. **Game Over**: The game doesn't have a time limit, but you can challenge yourself to achieve a high score. You can restart the game by clicking the "Start" button again.
+5. **Scoring**
+   - Your score is displayed at the bottom of the game interface, just below the timer.
+   - The initial score is set to 0.
+   - Each time you overlap the red square and the base, your score increases by 5 points.
 
-## Technologies Used
+6. **Game Over**
+   - The game will end when the timer reaches 0 seconds.
+   - A message will be displayed, showing your final score.
+   - You can click the "Start" button again to play a new game.
 
-- HTML5: Provides the basic structure of the game page.
-- CSS3: Styles the game elements and adds visual effects.
-- JavaScript: Implements the game logic and handles user input.
-- Canvas: Utilizes HTML5 Canvas to draw and animate the game elements.
+## Development
 
-## How to Run
+If you wish to further develop or modify the game, the source code is included in the `SquareGame.html` file. It consists of HTML, CSS, and JavaScript.
 
-You can play the game by simply opening the `index.html` file in a modern web browser (Chrome, Firefox, Safari, etc.). No additional installations or server setup is required.
-
-Alternatively, you can host the game on a web server to share it with others.
 
 ## Author
 
