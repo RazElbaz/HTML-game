@@ -3,21 +3,72 @@
 
 <head>
     <title>Page Title</title>
-</head>
-<body>
-    <header>
-        <h1>Square Seeker</h1>
-    </header>
-    <main>
-        <canvas></canvas>
-    </main>
-    <footer>
-        <button id="startButton">Start</button>
-        <button id="stopButton" onclick="stopGame()" disabled>Stop Game</button>
-        <section>Time Left: <span id="timer">0</span> seconds</section>
-        <section>Score: <span id="score">0</span></section>
-    </footer>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
 
+        #game-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        canvas {
+            width: 300px;
+            height: 300px;
+            border: 1px solid black;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin: 5px;
+        }
+
+        button:hover {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        button:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+    </style>
+    </head>
+
+    <body>
+    <div id="game-container">
+        <header style="background-color: #333; color: white; text-align: center; padding: 20px;">
+            <h1>Square Seeker</h1>
+        </header>
+        <main>
+            <canvas></canvas>
+        </main>
+        <footer>
+            <button id="startButton">Start</button>
+            <button id="stopButton" onclick="stopGame()" disabled>Stop Game</button>
+            <section>Time Left: <span id="timer">0</span> seconds</section>
+            <section>Score: <span id="score">0</span></section>
+        </footer>
+    </div>
     <script>
         const canvas = document.querySelector('canvas');
         canvas.width = 300;
@@ -135,6 +186,23 @@
     <style>
         canvas {
             border: 1px solid black;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            margin: 0;
         }
     </style>
 </body>
