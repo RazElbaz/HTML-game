@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Page Title</title>
+</head>
+
+<body>
+    <h1>
+        Metal Gear Square: Mario
+    </h1>
+    <main>
+        <canvas></canvas>
+    </main>
+    <section>Score: <span>0</span></section>
+
+    <script>
+        const canvas = document.querySelector('canvas')
+        canvas.width = 300
+        canvas.height = 300
+        const ctx= canvas.getContext('2d')
+
+        let player_x=20
+        let player_y=20
+        let base_x = Math.floor(Math.random() * 250)
+        let base_y = Math.floor(Math.random() * 250)
+
+        ctx.fillStyle= 'red'
+        ctx.fillRect(player_x, player_y, 10, 10)
+
+        ctx.strokeRect(base_x, base_y, 50, 50)
+        
+    </script>
+
+    <style>
+        canvas{
+            border: 1px solid black;
+        }
+    </style>
+</body>
+
+</html>
