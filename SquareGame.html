@@ -25,19 +25,26 @@
         let base_x = Math.floor(Math.random() * 250)
         let base_y = Math.floor(Math.random() * 250)
 
+        function step(){
         ctx.fillStyle= 'red'
         ctx.fillRect(player_x, player_y, 10, 10)
-
         ctx.strokeRect(base_x, base_y, 50, 50)
-        
+        requestAnimationFrame(step)
+        }
+        requestAnimationFrame(step)
+
+
         function handleInput(event){
             const key = event.key
-            if( key == 'w'){
-                console.log(" w pressed")
+            if( key == 'a'){
+                player_x -= 5
+            }
+            else if( key == 'w'){
+                player_y -= 5
             } else if ( key == 'd'){
-                console.log(" d pressed")
+                player_x += 5
             } else if ( key == 's'){
-                console.log(" s pressed")
+                player_y += 5
             }
         }
 
