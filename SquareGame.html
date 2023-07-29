@@ -130,8 +130,11 @@
                 ctx.fillStyle = 'red';
                 ctx.fillRect(player_x, player_y, 10, 10);
                 ctx.strokeRect(base_x, base_y, 50, 50);
+                const minDistance = 0.1; // Adjust this value to control the minimum distance between player and square
 
-                if (player_x + 10 > base_x && player_y + 10 > base_y + 10 && player_x < base_x + 50 && player_y < base_y + 50) {
+                if (
+                    (player_x + 10 >= base_x - minDistance && player_y + 10 >= base_y - minDistance && player_x <= base_x + 50 + minDistance && player_y <= base_y + 50 + minDistance)
+                ) {
                     score += 5;
                     base_x = Math.floor(Math.random() * 250);
                     base_y = Math.floor(Math.random() * 250);
@@ -148,8 +151,7 @@
                     } else {
                         timer = 60;
                     }
-                    const scoreElement = document.getElementById('score');
-                    scoreElement.textContent = score;
+
                     updateTimerDisplay(); // Update the displayed timer value after reset
                 }
 
@@ -200,6 +202,9 @@
         function updateTimerDisplay() {
         const timerElement = document.getElementById('timer');
         timerElement.textContent = 'Time Left: ' + timer + ' seconds';
+        
+        const scoreElement = document.getElementById('score');
+        scoreElement.textContent = 'Score: '+ score;
 
     }
 
