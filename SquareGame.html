@@ -13,6 +13,7 @@
     </main>
     <footer>
         <button id="startButton">Start</button>
+        <section>Time Left: <span id="timer">0</span> seconds  </section>
         <section>Score: <span id="score">0</span></section>
     </footer>
 
@@ -71,6 +72,49 @@
         function startGame() {
         gameStarted = true;
         requestAnimationFrame(step);
+        }
+
+        let timer = 0;
+        let intervalId; // Variable to store the setInterval ID
+
+        function startGame() {
+            if (!gameStarted) {
+            gameStarted = true;
+            timer = 60; // Set the initial timer value (in seconds)
+            updateTimerDisplay(); // Display the initial timer value
+            intervalId = setInterval(updateTimer, 1000); // Start the timer
+            startButton.disabled = true; // Disable the "Start" button during the game
+            requestAnimationFrame(step);
+        }
+        }
+
+        function updateTimer() {
+        if (gameStarted) {
+            timer--; // Decrement the timer by 1 second
+            updateTimerDisplay(); // Update the displayed timer value
+
+            if (timer <= 0) {
+                endGame(); // Call the endGame function when the timer reaches 0 seconds
+            }
+        }
+    }
+
+    function updateTimerDisplay() {
+        const timerElement = document.getElementById('timer');
+        timerElement.textContent = timer;
+    }
+
+    function endGame() {
+        gameStarted = false;
+        clearInterval(intervalId); // Stop the timer interval
+        startButton.disabled = false; // Enable the "Start" button after the game is over
+        alert('Game Over! Your final score is: ' + score); // Display a game over message with the final score
+    }
+
+        function endGame() {
+            gameStarted = false;
+            clearInterval(intervalId); // Stop the timer interval
+            // You can add game over logic here, e.g., display a message or reset the game.
         }
 
         document.addEventListener('keypress', handleInput)
