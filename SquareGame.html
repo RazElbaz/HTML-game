@@ -84,8 +84,8 @@
             color: white;
             text-align: center;
             padding: 20px;
+            margin: 0; 
         }
-
         h1 {
             margin: 0;
         }
@@ -103,10 +103,12 @@
         <footer>
             <button id="startButton">Start</button>
             <button id="stopButton" onclick="stopGame()" disabled>Stop Game</button>
-            <section id="timer">Time Left: <span>60</span> seconds</section>
-            <section id="score">Score: <span>0</span></section>
+            <section id="timer">Time Left:&nbsp;<span>60</span>&nbsp;seconds</section>
+            <section id="score">Score:&nbsp;<span>0</span></section>
         </footer>
     </div>
+    
+
     <script>
         const canvas = document.querySelector('canvas');
         canvas.width = 300;
@@ -146,16 +148,17 @@
                     } else {
                         timer = 60;
                     }
-
+                    const scoreElement = document.getElementById('score');
+                    scoreElement.textContent = score;
                     updateTimerDisplay(); // Update the displayed timer value after reset
                 }
 
-                const scoreElement = document.getElementById('score');
-                scoreElement.textContent = score;
+                
 
                 requestAnimationFrame(step);
             }
         }
+ 
 
         requestAnimationFrame(step);
 
@@ -195,9 +198,11 @@
         }
 
         function updateTimerDisplay() {
-            const timerElement = document.getElementById('timer');
-            timerElement.textContent = timer;
-        }
+        const timerElement = document.getElementById('timer');
+        timerElement.textContent = 'Time Left: ' + timer + ' seconds';
+
+    }
+
 
         function endGame() {
             gameStarted = false;
