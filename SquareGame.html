@@ -5,13 +5,16 @@
     <title>Page Title</title>
 </head>
 <body>
-    <h1>
-        Metal Gear Square: Mario
-    </h1>
+    <header>
+        <h1>Square Seeker</h1>
+    </header>
     <main>
         <canvas></canvas>
     </main>
-    <section>Score: <span><span id="score"></span></span></section>
+    <footer>
+        <button id="startButton">Start</button>
+        <section>Score: <span id="score">0</span></section>
+    </footer>
 
     <script>
         const canvas = document.querySelector('canvas')
@@ -25,24 +28,29 @@
         let player_y = 20
         let base_x = Math.floor(Math.random() * 250)
         let base_y = Math.floor(Math.random() * 250)
+        let gameStarted = false; // Flag to track if the game has started
 
         function step(){
-        ctx.clearRect(0, 0, 300, 300)
-        ctx.fillStyle= 'red'
-        ctx.fillRect(player_x, player_y, 10, 10)
-        ctx.strokeRect(base_x, base_y, 50, 50)
+            if(gameStarted){
+                ctx.clearRect(0, 0, 300, 300)
+                ctx.fillStyle= 'red'
+                ctx.fillRect(player_x, player_y, 10, 10)
+                ctx.strokeRect(base_x, base_y, 50, 50)
 
-        if(player_x+10 > base_x && player_y+10 > base_y+10 && player_x < base_x + 50 && player_y < base_y + 50){
-            score+=5
-            base_x = Math.floor(Math.random() * 250)
-            base_y = Math.floor(Math.random() * 250)
-        }
+                if(player_x+10 > base_x && player_y+10 > base_y+10 && player_x < base_x + 50 && player_y < base_y + 50){
+                    score+=5
+                    base_x = Math.floor(Math.random() * 250)
+                    base_y = Math.floor(Math.random() * 250)
+                }
 
-        const scoreElement = document.getElementById('score');
-        scoreElement.textContent = score;
+                const scoreElement = document.getElementById('score');
+                scoreElement.textContent = score;
 
-        requestAnimationFrame(step)
-        }
+                requestAnimationFrame(step)
+                }
+
+            }
+
         requestAnimationFrame(step)
 
 
@@ -60,7 +68,14 @@
             }
         }
 
+        function startGame() {
+        gameStarted = true;
+        requestAnimationFrame(step);
+        }
+
         document.addEventListener('keypress', handleInput)
+        const startButton = document.getElementById('startButton');
+        startButton.addEventListener('click', startGame);
     </script>
 
     <style>
