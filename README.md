@@ -1,4 +1,3 @@
-Apologies for the oversight. You are correct; the arrow keys are typically represented as "w" (up), "a" (left), "s" (down), and "d" (right) for gaming. Here's the updated README with the correct control instructions:
 
 # Square Seeker - Readme
 
