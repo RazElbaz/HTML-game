@@ -5,6 +5,12 @@ Sure, here's the revised README without the "How to Customize" section:
 
 Square Seeker is a simple web-based game where the objective is to move a red square over a randomly positioned square on the canvas to increase your score. The game also includes a timer that starts at 60 seconds and decreases as you score more points, making the game more challenging as you progress.
 
+## Gameplay Video
+
+Click the video below to watch the gameplay:
+
+[![Square Seeker Gameplay](https://github.com/RazElbaz/Square-Seeker/raw/main/square_game.mp4)](https://github.com/RazElbaz/Square-Seeker/raw/main/square_game.mp4)
+
 ## How to Play
 
 1. **Accessing the Game**
