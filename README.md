@@ -9,7 +9,7 @@ Square Seeker is a simple web-based game where the objective is to move a red sq
 
 Click the video below to watch the gameplay:
 
-[![Square Seeker Gameplay](https://github.com/RazElbaz/Square-Seeker/raw/main/square_game.mp4)](https://github.com/RazElbaz/Square-Seeker/raw/main/square_game.mp4)
+![Square Seeker Gameplay](https://github.com/RazElbaz/Square-Seeker/blob/main/square_game.gif)
 
 ## How to Play
 
