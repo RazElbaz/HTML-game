@@ -4,7 +4,6 @@
 <head>
     <title>Page Title</title>
 </head>
-
 <body>
     <h1>
         Metal Gear Square: Mario
@@ -26,9 +25,15 @@
         let base_y = Math.floor(Math.random() * 250)
 
         function step(){
+        ctx.clearRect(0, 0, 300, 300)
         ctx.fillStyle= 'red'
         ctx.fillRect(player_x, player_y, 10, 10)
         ctx.strokeRect(base_x, base_y, 50, 50)
+
+        if(player_x >= base_x && player_y >= base_y && player_x <= base_x + 50 && player_y <= base_y + 50){
+            console.log("YOU WON")
+        }
+
         requestAnimationFrame(step)
         }
         requestAnimationFrame(step)
